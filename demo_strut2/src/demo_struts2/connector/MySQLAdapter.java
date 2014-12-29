@@ -14,6 +14,7 @@ public class MySQLAdapter {
 	protected Connection conn = MySQLConnection.getSQLConnection("root", "admin");
 	
 	public ResultSet execSelect(String sql) throws SQLException {
+		System.out.println("hello");
 		Statement sttm = conn.createStatement();
 		return sttm.executeQuery(sql);
 	}
