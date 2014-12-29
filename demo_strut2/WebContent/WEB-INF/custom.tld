@@ -7,7 +7,7 @@
   <jsp-version>2.3</jsp-version>
   <short-name>Custom TLD</short-name>
   <tag>
-    <name>Hello</name>
+    <name>FullName</name>
     <tag-class>demo_struts2.custag.FullName</tag-class>
     <body-content>empty</body-content>
     <attribute>

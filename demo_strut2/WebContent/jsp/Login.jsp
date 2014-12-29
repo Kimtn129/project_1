@@ -2,15 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="../WEB-INF/custom.tld" prefix="ex" %>
 
-<!-- - See more at: http://www.javabeat.net/struts-bean-define-tag-beandefine/#sthash.MBgC611q.dpuf -->
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Demo Strut2</title>
-	<link href="<%= request.getContextPath() %>/resource/css/bootstrap.min.css" rel="stylesheet">
-</head>
+<jsp:include page="Common_Header.jsp"></jsp:include>
 <body>
 	<h1>Hello World From Struts2</h1>
 	<jsp:useBean id="user" class="demo.struts2.bean.UserBean" scope="request">
@@ -42,6 +34,19 @@
 		                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 		                    <input id="login-password" type="password" class="form-control" name="password" placeholder="password" value="${user.password }"/>
 		                </div>
+
+
+		                <%-- <div style="margin-bottom: 25px" class="input-group">
+		                	<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+		                    <input type="password" class="form-control" name="firstName" placeholder="firstName" value="${user.firstName }"/>
+		                </div>
+		                <div style="margin-bottom: 25px" class="input-group">
+		                	<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+		                	<input type="password" class="form-control" name="lastName" placeholder="lastName" value="${user.lastName }"/>
+		                </div> --%>
+		                
+		                <ex:FullName firstName="${firstName }" lastName="${lastName }"/>
+		                
 		                <div class="input-group">
 		                  <div class="checkbox">
 		                    <label>
@@ -70,8 +75,6 @@
 		    </div>  
 		</div>
 	</div>
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="<%= request.getContextPath() %>/resource/js/bootstrap.min.js"></script>
+	<jsp:include page="Common_JS.jsp"></jsp:include>
 </body>
 </html>

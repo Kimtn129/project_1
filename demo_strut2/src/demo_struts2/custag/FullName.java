@@ -41,11 +41,23 @@ public class FullName extends SimpleTagSupport {
 	public void doTag() throws JspException, IOException {
 		JspWriter out = getJspContext().getOut();
 		if (this.firstName != null && !this.firstName.equals("")) {
-			out.println("<input type='text' name='firstName' value='" + this.firstName + "'/>");
-			out.println("<input type='text' name='lastName' value='" + this.lastName + "'/>");
+			out.println("<div style='margin-bottom: 25px' class='input-group'>");
+			out.println("<span class='input-group-addon'><i class='glyphicon glyphicon-pencil'></i></span>");
+			out.println("    <input type='text' name='firstName' value='" + this.firstName + "'/>");
+			out.println("</div>");
+			out.println("<div style='margin-bottom: 25px' class='input-group'>");
+			out.println("<span class='input-group-addon'><i class='glyphicon glyphicon-pencil'></i></span>");
+			out.println("    <input type='text' name='lastName' value='" + this.lastName + "'/>");
+			out.println("</div>");
 		} else {
+			out.println("<div style='margin-bottom: 25px' class='input-group'>");
+			out.println("<span class='input-group-addon'><i class='glyphicon glyphicon-pencil'></i></span>");
 			out.println("<input type='text' name='firstName'/>");
+			out.println("</div>");
+			out.println("<div style='margin-bottom: 25px' class='input-group'>");
+			out.println("<span class='input-group-addon'><i class='glyphicon glyphicon-pencil'></i></span>");
 			out.println("<input type='text' name='lastName'/>");
+			out.println("</div>");
 		}
 		out.println("</br>");
 	}

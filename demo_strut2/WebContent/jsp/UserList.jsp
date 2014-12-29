@@ -38,6 +38,7 @@
 		        </c:forEach>
 		    </tbody>
 		</table>
+		<ex:FullName firstName="${firstName }" lastName="${lastName }"/>
 	</div>
 </body>
 </html>
