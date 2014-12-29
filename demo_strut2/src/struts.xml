@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="false" />
+   	<package name="default" namespace="/" extends="struts-default">
+      	<action name="login" class="demo.struts2.actions.AuthAction" method="login">
+            <result name="thanhcong" type="redirect">
+	            <param name="location">/users/list</param >
+            </result>
+            <result name="thatbai">/jsp/Login.jsp</result>
+      	</action>
+      	<action name="logout" class="demo.struts2.actions.AuthAction" method="logout">
+            <result name="success">/jsp/Logout.jsp</result>
+      	</action>
+      	<action name="reset_pwd" class="demo.struts2.actions.AuthAction" method="resetPwd">
+            <result name="success">/jsp/Wellcome.jsp</result>
+      	</action>
+   	</package>
+   	<package name="users" namespace="/" extends="struts-default">
+		<action name="list" class="demo.struts2.actions.UserAction" method="list">
+	   		<result name="success">/jsp/UserList.jsp</result>
+	   	</action>
+   </package>
+</struts>
