@@ -14,7 +14,7 @@ public class UserAction extends ActionSupport {
 
 	public String list() throws Exception {
     	HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("users", new UserController().getAllUser());
+		request.setAttribute("users", UserController.getAllUser());
 		return SUCCESS;
     }
 }

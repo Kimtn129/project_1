@@ -1,16 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="../WEB-INF/custom.tld" prefix="ex" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 
 <jsp:include page="Common_Header.jsp"></jsp:include>
 <body>
 	<h1>Hello World From Struts2</h1>
-	<jsp:useBean id="user" class="demo.struts2.bean.UserBean" scope="request">
-		<jsp:setProperty property="email" name="user"/>
-		<jsp:setProperty property="password" name="user"/>
-		<jsp:setProperty property="firstName" name="user"/>
-		<jsp:setProperty property="lastName" name="user"/>
-	</jsp:useBean>
 	<div class="container">
 		<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
 		    <div class="panel panel-info">
@@ -20,7 +15,7 @@
 		        </div>     
 		        <div style="padding-top:30px" class="panel-body">
 		            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-		            <form id="loginform" class="form-horizontal" action="login" method="POST">
+		            <s:form id="loginform" class="form-horizontal" action="login" method="POST">
 		            	<c:if test='${error != null && error != ""}'>
 		            		<div class="alert alert-danger" role="alert">
 		            			<strong>${error }</strong>
@@ -28,24 +23,12 @@
 		            	</c:if>
 		                <div style="margin-bottom: 25px" class="input-group">
 		                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		                    <input id="login-username" type="text" class="form-control" name="email" placeholder="username or email" value="${user.email }">
+		                    <input id="login-username" type="text" class="form-control" name="form.email" placeholder="username or email" value="${form.email }">
 		                </div>
 		                <div style="margin-bottom: 25px" class="input-group">
 		                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-		                    <input id="login-password" type="password" class="form-control" name="password" placeholder="password" value="${user.password }"/>
+		                    <input id="login-password" type="password" class="form-control" name="form.password" placeholder="password" value="${form.password }"/>
 		                </div>
-
-
-		                <%-- <div style="margin-bottom: 25px" class="input-group">
-		                	<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-		                    <input type="password" class="form-control" name="firstName" placeholder="firstName" value="${user.firstName }"/>
-		                </div>
-		                <div style="margin-bottom: 25px" class="input-group">
-		                	<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-		                	<input type="password" class="form-control" name="lastName" placeholder="lastName" value="${user.lastName }"/>
-		                </div> --%>
-		                
-		                <ex:FullName firstName="${firstName }" lastName="${lastName }"/>
 		                
 		                <div class="input-group">
 		                  <div class="checkbox">
@@ -70,7 +53,7 @@
 		                        </div>
 		                    </div>
 		                </div>    
-		            </form>
+		            </s:form>
 		        </div>
 		    </div>  
 		</div>

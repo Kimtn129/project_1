@@ -6,10 +6,10 @@
 <constant name="struts.devMode" value="false" />
    	<package name="default" namespace="/" extends="struts-default">
       	<action name="login" class="demo.struts2.actions.AuthAction" method="login">
-            <result name="thanhcong" type="redirect">
+            <result name="success" type="redirect">
 	            <param name="location">/users/list</param >
             </result>
-            <result name="thatbai">/jsp/Login.jsp</result>
+            <result name="error">/jsp/Login.jsp</result>
       	</action>
       	<action name="logout" class="demo.struts2.actions.AuthAction" method="logout">
             <result name="success">/jsp/Logout.jsp</result>

@@ -13,9 +13,21 @@ public class MySQLAdapter {
 	// Get connection to MySQL server with user/password: "root"/"admin"
 	protected Connection conn = MySQLConnection.getSQLConnection("root", "admin");
 	
-	public ResultSet execSelect(String sql) throws SQLException {
-		System.out.println("hello");
+	public ResultSet execSelect(String tableName, String ... whereClause) throws SQLException {
 		Statement sttm = conn.createStatement();
-		return sttm.executeQuery(sql);
+		String query = "SELECT * FROM " + tableName;
+		if (whereClause.length > 0) {
+			query += " WHERE ";
+			for (String string : whereClause) {
+				query += string + " AND ";
+			}
+			query += " 1=1";
+		}
+		return sttm.executeQuery(query);
+	}
+	
+	public int execInsert(String tableName, String[] values) throws SQLException {
+		Statement sttm = conn.createStatement();
+		return sttm.executeUpdate("INSERT INTO " + tableName + " VALUES (" + values.toString() + ")");
 	}
 }
