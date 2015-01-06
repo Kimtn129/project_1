@@ -23,7 +23,8 @@
 		            	</c:if>
 		                <div style="margin-bottom: 25px" class="input-group">
 		                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		                    <input id="login-username" type="text" class="form-control" name="form.email" placeholder="username or email" value="${form.email }">
+		                    <%-- <input id="login-username" type="text" class="form-control" name="form.email" placeholder="username or email" value="${form.email }"> --%>
+		                    <s:textfield name="email" label="Name" size="20" cssClass="form-control"/>
 		                </div>
 		                <div style="margin-bottom: 25px" class="input-group">
 		                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>

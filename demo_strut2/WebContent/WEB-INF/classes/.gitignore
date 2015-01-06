@@ -16,3 +16,5 @@
 /demo_struts2/
 /freemarker-2.3.19.jar
 /javassist-3.11.0.GA.jar
+/struts-config.xml
+/struts.properties
