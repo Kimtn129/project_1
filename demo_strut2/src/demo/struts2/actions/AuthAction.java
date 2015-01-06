@@ -1,7 +1,5 @@
 package demo.struts2.actions;
 
-import org.apache.struts2.ServletActionContext;
-
 import com.opensymphony.xwork2.Action;  
 import com.opensymphony.xwork2.ActionSupport;
 
