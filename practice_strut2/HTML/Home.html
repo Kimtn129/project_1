@@ -1,0 +1,108 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>client</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="main-container" id="main-container">
+            <header id="header">
+                <div id="nav-bar" class="navbar navbar-inverse navbar-fixed-top"> 
+                  <div class="navbar-inner">
+                    <div class="container"> 
+                      <span class="brand">User manager</span>
+                    </div>
+                  </div>
+                </div>
+            </header>
+            <div class="container-fluid user-container" id="body-container">
+              <div class="row">
+                <div class="col-md-3" id="left-menu">
+                    <div class="well sidebar-nav" id="nav-main">
+                      <ul class="nav nav-pills nav-stacked">
+                        <li class="nav-header">Examples User</li>
+                        <li id="list-user" class="active"><a href="#list_user" class="add-user">User list</a></li>
+                        <li id="new-user"><a href="#create_user">Create User</a></li>
+                      </ul>
+                    </div>
+                </div>
+                <div class="col-md-9" id="container">
+                    <div class="list">
+                      <h3>User List</h3>
+                      <div id="user-list">
+                        <div class="user-list-frm">
+                          <div class="alert alert-success" style="display:none">
+                            <strong>User had been deleted!</strong>
+                          </div>
+                          <div class="search-partern">
+                            <form role="form" class="form-inline">
+                              <div class="form-group">
+                                <select class="form-control column-name">
+                                  <option value="firstName">First Name</option>
+                                  <option value="lastName">Last Name</option>
+                                  <option value="email">Email</option>
+                                  <option value="age">Age</option>
+                                  <option value="roleName">Role</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <input type="text" name="search-key" placeholder="search" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                <input type="text" name="filter-key" placeholder="filter" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                <button type="submit" class="btn btn-primary" id="save">Search</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="list-user">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>  
+                              <th style="width: 50px">Index</th>  
+                              <th data-column-name="firstName" style="width: 150px">First Name</th>  
+                              <th data-column-name="lastName" style="width: 150px">Last Name</th>  
+                              <th data-column-name="email" style="width: 300px">Email</th>
+                              <th data-column-name="age" style="width: 50px">Age</th>
+                              <th data-column-name="roleName" style="width: 70px">Role</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+</body>
+</html>

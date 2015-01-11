@@ -7,11 +7,11 @@ import java.sql.Statement;
 
 public class MySQLAdapter {
 
-	protected static final String SQL_USER = "root";
+	protected static final String SQL_USER = "admin";
 	protected static final String SQL_PASSWORD = "admin";
 
 	// Get connection to MySQL server with user/password: "root"/"admin"
-	protected Connection conn = MySQLConnection.getSQLConnection("root", "admin");
+	protected Connection conn = MySQLConnection.getSQLConnection(SQL_USER, SQL_PASSWORD);
 	
 	public ResultSet execSelect(String tableName, String ... whereClause) throws SQLException {
 		Statement sttm = conn.createStatement();
